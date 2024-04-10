@@ -1,0 +1,12 @@
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    text-decoration: none;
+    background-color: aquamarine;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+}
