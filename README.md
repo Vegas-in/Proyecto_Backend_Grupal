@@ -1,3 +1,4 @@
+
 # Proyecto_Backend_Gurpal
 # Proyecto de Aplicación Web de Búsqueda de Ayudas, Subvenciones y Becas
 
@@ -83,3 +84,5 @@ La aplicación estará protegida contra entradas indebidas de usuarios no regist
 - La aplicación debe ser mobile-first.
 - Se seguirá una metodología ágil tipo SCRUM.
 - Se realizarán tests unitarios desde el principio y, a ser posible, tests e2e al final.
+=======
+# Proyecto_Backend_Grupal
