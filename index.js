@@ -7,6 +7,8 @@ const passport = require("passport");
 const app = express();
 const port = 3000;
 
+app.use(express.static('public'));
+
 // Middlewares
 const error404 = require("./middlewares/error404");
 const morgan = require("./middlewares/morgan");
