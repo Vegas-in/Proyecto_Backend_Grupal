@@ -19,9 +19,11 @@ app.use(morgan(':method :host :status :param[id] - :response-time ms :body'));
 
 // Ficheros de rutas
 const webRoutes = require("./routes/web.routes");
+const apiRoutes = require("./routes/api.routes");
 
-// Rutas WEB
-app.use('/', webRoutes); // falla aqui
+// Rutas
+app.use('/', webRoutes);
+app.use('/api/', apiRoutes);
 
 // Configuración de PUG - Motor de plantillas
 app.set('view engine', 'pug');
