@@ -31,10 +31,30 @@ const deleteUserApi = (req, res) => {
     res.status(200).send("Usuario borrado!. Has borrado:" + req.params.name);
 }
 
+const loginUserApi = (req, res) => {}
+
+const logoutUserApi = (req, res) => {}
+
+const searchUserApi = (req, res) => {}
+
+const createAdsUserApi = (req, res) => {}
+
+const editAdsUserApi = (req, res) => {}
+
+const recoverPasswordUserApi = (req, res) => {}
+
+const restorepasswordUserApi = (req, res) => {}
+
 //EXPORTACION DE DATOS
 module.exports = {
     createUserApi,
-   /*  getUserApi, */
     editUserApi,
-    deleteUserApi
+    deleteUserApi,
+    loginUserApi,
+    logoutUserApi,
+    searchUserApi,
+    createAdsUserApi,
+    editAdsUserApi,
+    recoverPasswordUserApi,
+    restorepasswordUserApi
 }
