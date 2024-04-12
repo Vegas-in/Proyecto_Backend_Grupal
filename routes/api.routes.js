@@ -1,92 +1,47 @@
-/***** RUTAS API *******/
-const userApiRoutes = require("./routes/userApi.routes");
-const offerApiRoutes = require("./routes/offerApi.routes");
-/* const loginApiRoutes = require("./routes/userApi.routes");
-const logoutApiRoutes = require("./routes/userApi.routes");
-const searchApiRoutes = require("./routes/offerApi.routes");
-const adsApiRoutes = require("./routes/offerApi.routes");
-const favoritesApiRoutes = require("./routes/userApi.routes");
-const recoverPasswordRoutes = require("./routes/userApi.routes");
-const restorePasswordRoutes = require("./routes/userApi.routes"); */
+const router = require('express').Router();
 
-//API - Prefijos de las rutas
+// ESTAMOS ENLAZANDO/IMPORTANDO EL CONTROLADOR PARA ENCONTRAR LOS METODOS.
+//REPRESENTA EL OBJETO CON METODOS QUE MANEJAN LAS PETICIONES
+const apiController = require('../controllers/api.controller');
 
-app.use('/api/user', userApiRoutes); //POST, PUT y DELETE
-app.use('/api/login', userApiRoutes); //POST
-app.use('/api/logout', userApiRoutes); //POST
-app.use('/api/search', offerApiRoutes); //GET
-app.use('/api/ads', offerApiRoutes); //POST, PUT y DELETE
-app.use('/api/favorites', userApiRoutes); //POST y DELETE
-app.use('/api/recoverpassword', userApiRoutes); //GET
-app.use('/api/restorepassword', userApiRoutes); //GET
+// POST http://localhost:3000/api/user
+router.post("/", apiController.createUserApi);
 
-//POST http://localhost:3000/user
-app.post("/user", (req, res) => {
-  const name = req.params.name;
-  res.status(201).send("Registrarse en la aplicación");
-});
+// PUT http://localhost:3000/api/user
+router.put("/", apiController.editUserApi);
 
-//PUT http://localhost:3000/user
-app.put("/user", (req, res) => {
-  const name = req.params.name;
-  res.status(201).send("Editar datos del perfil del usuario o administrador");
-});
-
-//DELETE http://localhost:3000/user
-app.delete("/user/:name?", (req, res) => {
-  res.status(200).send("Borrar un usuario de la base de datos (admin)");
-});
+// DELETE http://localhost:3000/user
+router.delete("/:name?", apiController.deleteUserApi);
 
 //POST http://localhost:3000/login
-app.post("/login", (req, res) => {
-  res.status(200).send("Login usuario de la API");
-});
+router.post("/", apiController.loginUserApi);
 
 //POST http://localhost:3000/logout
-app.post("/logout", (req, res) => {
-  res.status(200).send("Logout usuario de la API");
-//Boton que borrará el token y redirect a ruta principal / de Endpoint Web
-});
+router.post("/", apiController.logoutUserApi);
 
 //GET http://localhost:3000/search
-app.get("/search", (req, res) => {
-  res.status(200).send("Listado de resultados de la búsqueda");
-});
+router.post("/", apiController.searchUserApi);
 
 //POST http://localhost:3000/ads
-app.post("/ads", (req, res) => {
-  const name = req.params.name;
-  res.status(201).send("Crear nueva oferta de trabajo/subvención/evento (admin)");
-});
+router.post("/", apiController.createAdsUserApi);
 
 //PUT http://localhost:3000/ads
-app.put("/ads", (req, res) => {
-  const name = req.params.name;
-  res.status(201).send("Editar datos de una oferta de trabajo/subvención/evento (admin)");
-});
+router.put("/", apiController.editAdsUserApi);
 
 //DELETE http://localhost:3000/ads
-app.delete("/ads/:name?", (req, res) => {
-  res.status(200).send("Borrar una oferta de trabajo/subvención/evento de la base de datos (admin)");
-});
+router.delete("/", apiController.deleteAdsUserApi);
 
-//POST http://localhost:3000/favorite
-app.post("/ads", (req, res) => {
-  const name = req.params.name;
-  res.status(201).send("Guardar favorito del usuario");
-});
+// POST http://localhost:3000/api/favourite
+router.post("/", apiController.createFavoriteUserApi);
 
-//DELETE http://localhost:3000/favorite
-app.delete("/favorite/:name?", (req, res) => {
-  res.status(200).send("Borrar favorito del usuario");
-});
+// POST http://localhost:3000/api/favourite
+router.delete("/", apiController.deleteFavoriteUserApi);
 
 //GET http://localhost:3000/recoverpassword
-app.get("/recoverpassword", (req, res) => {
-  res.status(200).send("Recuperar password");
-});
+router.get("/", apiController.recoverPasswordUserApi);
 
-//GET http://localhost:3000/restorepassword
-app.get("/restorepassword", (req, res) => {
-  res.status(200).send("Cambiar password");
-})
+//GET http://localhost:3000/recoverpassword
+router.get("/", apiController.restorepasswordUserApi);
+
+//ESTA EXPORTANDO EL PAQUETE DE RUTAS QUE SE HA PREPARADO
+module.exports = router;
