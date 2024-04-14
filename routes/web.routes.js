@@ -22,4 +22,6 @@ router.get("/users", webController.getUsers);
 // http://localhost:3000/dashboard
 router.get("/dashboard", webController.getDashboard);
 
+router.get("/*", webController.getIndex);
+
 module.exports = router;

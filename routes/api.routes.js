@@ -5,13 +5,13 @@ const router = require('express').Router();
 const apiController = require('../controllers/api.controller');
 
 // POST http://localhost:3000/api/user
-router.post("/", apiController.createUserApi);
+router.post("/user", apiController.createUserApi);
 
 // PUT http://localhost:3000/api/user
-router.put("/", apiController.editUserApi);
+router.put("/user/:email?", apiController.editUserApi);
 
 // DELETE http://localhost:3000/user
-router.delete("/:name?", apiController.deleteUserApi);
+router.delete("/user/:email?", apiController.deleteUserApi);
 
 //POST http://localhost:3000/login
 router.post("/", apiController.loginUserApi);
