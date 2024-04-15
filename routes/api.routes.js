@@ -5,8 +5,8 @@ const apiController = require('../controllers/api.controller');
 
 // http://localhost:3000/api/user/
 router.post("/user/", apiController.createUser);
-router.put("/user/:name", apiController.updateUser);
-router.delete("/user/:name", apiController.deleteUser);
+router.put("/user/:email", apiController.updateUser);
+router.delete("/user/:email", apiController.deleteUser);
 
 // http://localhost:3000/api/login/
 // http://localhost:3000/api/logout/

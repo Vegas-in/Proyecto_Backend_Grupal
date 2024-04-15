@@ -7,27 +7,27 @@ const getIndex = async (req, res) => {
 }   
 
 const getSignUp = async (req, res) => {
-    res.status(200).send("Vista de registro de usuario");
+    res.status(200).send("../views/signUp.pug");
 }
 
 const getLogin = async (req, res) => {
-    res.status(200).send("Vista de ingreso de usuario ya registrado");
+    res.status(200).send("../views/login.pug");
 }
 
 const getFavorites = async (req, res) => {
-    res.status(200).send("Vista del usuario con sus favoritos");
+    res.status(200).send("../views/favorites.pug");
 }
 
 const getProfile = async (req, res) => {
-    res.status(200).send("Vista del usuario o el administrador con sus datos de perfil");
+    res.status(200).send("../views/profile.pug");
 }
 
 const getUsers = async (req, res) => {
-    res.status(200).send("Vista del administrador con el listado de usuario registrados (admin)");
+    res.status(200).send("../views/listUsers.pug");
 }
 
 const getDashboard = async (req, res) => {
-    res.status(200).send("Vista del administrador para crear y visualizar sus anuncios (admin)");
+    res.status(200).send("../views/jobsOffers.pug");
 }
 
 module.exports = {

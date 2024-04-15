@@ -1,18 +1,45 @@
+const users = require("../models/api.model");
 const Anuncio = require("../models/web.model");
 
 // USER
 const createUser = async (req, res) => {
-    res.status(200).send("Funciona");
+    const newUser = req.body; // {title,content,email,category}
+    const response = await users.createUser(newUser);
+    res.status(201).json({
+        "items_created": response,
+        data: newUser
+        },
+        {
+            message: `usuario creado`
+        }); 
 }
 
 const updateUser = async (req, res) => {
-    res.status(200).send("Funciona");
+    const modifiedUser = req.body; // {title,content,date,category,email,old_title}
+    const response = await users.editUserApi(modifiedUser);
+    res.status(200).json({
+        "items_updated": response,
+        data: modifiedUser
+    },{
+        message: `usuario creado:`
+    });
 }
 
 const deleteUser = async (req, res) => {
-    res.status(200).send("Funciona");
-}
-
+    let userSearch;
+    if (req.params.email) {
+        userSearch = await users.getUserByEmail(req.params.email);
+        if (userSearch.length > 0) {
+            deleted = await users.deleteUserApi(req.params.email); 
+            res.status(200).json({message: `Se ha borrado ${req.params.email}`})
+        }else{
+            res.status(404).json("No se ha encontrado el usuario")
+        }
+    }
+    else {
+        res.status(404).json("No se ha encontrado el usuario")
+    }
+};
 
 // LOGIN-LOGOUT
 const login = async (req, res) => {
