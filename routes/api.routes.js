@@ -1,47 +1,35 @@
 const router = require('express').Router();
-
 // ESTAMOS ENLAZANDO/IMPORTANDO EL CONTROLADOR PARA ENCONTRAR LOS METODOS.
-//REPRESENTA EL OBJETO CON METODOS QUE MANEJAN LAS PETICIONES
+// REPRESENTA EL OBJETO CON METODOS QUE MANEJAN LAS PETICIONES
 const apiController = require('../controllers/api.controller');
 
-// POST http://localhost:3000/api/user
-router.post("/", apiController.createUserApi);
+// http://localhost:3000/api/user/
+router.post("/user/", apiController.createUser);
+router.put("/user/:name", apiController.updateUser);
+router.delete("/user/:name", apiController.deleteUser);
 
-// PUT http://localhost:3000/api/user
-router.put("/", apiController.editUserApi);
+// http://localhost:3000/api/login/
+// http://localhost:3000/api/logout/
+router.post("/login/", apiController.login);
+router.post("/logout/", apiController.logout);
 
-// DELETE http://localhost:3000/user
-router.delete("/:name?", apiController.deleteUserApi);
+// http://localhost:3000/api/search/
+router.post("/search/", apiController.search);
 
-//POST http://localhost:3000/login
-router.post("/", apiController.loginUserApi);
+// http://localhost:3000/api/ads/
+router.post("/ads/", apiController.createOffer);
+router.put("/ads/:name", apiController.updateOffer);
+router.delete("/ads/:name", apiController.deleteOffer);
 
-//POST http://localhost:3000/logout
-router.post("/", apiController.logoutUserApi);
+// http://localhost:3000/api/favourite/
+router.post("/favourite/", apiController.createFavorite);
+router.delete("/favourite/", apiController.deleteFavorite);
 
-//GET http://localhost:3000/search
-router.post("/", apiController.searchUserApi);
+// http://localhost:3000/api/recoverpassword/
+router.get("/recoverpassword/", apiController.recoverPassword);
 
-//POST http://localhost:3000/ads
-router.post("/", apiController.createAdsUserApi);
-
-//PUT http://localhost:3000/ads
-router.put("/", apiController.editAdsUserApi);
-
-//DELETE http://localhost:3000/ads
-router.delete("/", apiController.deleteAdsUserApi);
-
-// POST http://localhost:3000/api/favourite
-router.post("/", apiController.createFavoriteUserApi);
-
-// POST http://localhost:3000/api/favourite
-router.delete("/", apiController.deleteFavoriteUserApi);
-
-//GET http://localhost:3000/recoverpassword
-router.get("/", apiController.recoverPasswordUserApi);
-
-//GET http://localhost:3000/recoverpassword
-router.get("/", apiController.restorepasswordUserApi);
+// http://localhost:3000/api/restorepassword/
+router.get("/restorepassword/", apiController.restorepassword);
 
 //ESTA EXPORTANDO EL PAQUETE DE RUTAS QUE SE HA PREPARADO
 module.exports = router;
