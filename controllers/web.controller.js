@@ -1,5 +1,9 @@
+const Anuncio = require("../models/web.model");
+
 const getIndex = async (req, res) => {
-    res.status(200).render("../views/index.pug");
+    let anuncios = await Anuncio.find({}, '-id, -__v');
+    console.log(anuncios[0]);
+    res.status(200).render("../views/headerAdmin.pug", anuncios[0]);
 }   
 
 const getSignUp = async (req, res) => {
