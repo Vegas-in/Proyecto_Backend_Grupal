@@ -7,6 +7,7 @@ const passport = require("passport");
 const app = express();
 const port = 3000;
 
+app.use(express.urlencoded({ extended: true })); // Envío de formularios
 app.use(express.static('public'));
 
 // Middlewares
