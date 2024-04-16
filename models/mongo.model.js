@@ -21,7 +21,6 @@ const objectSchema = {
     tituloOferta: { 
         type: String, 
         required: true,
-        unique: true 
     },
     fechaOferta: { 
         type: String, 

@@ -23,7 +23,7 @@ main
     h2 OFERTAS FREELANCE
     .search
       // search input
-      form#searchForm(action='#')
+      form#searchForm(action='/api/search' method='POST')
         input#searchInput(type='text' placeholder='Search' name='search')
         button#userQuery(type='submit')
           i.fa.fa-solid.fa-magnifying-glass
