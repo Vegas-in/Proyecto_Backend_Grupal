@@ -20,6 +20,7 @@ const updateUser = async (req, res) => {
         "item_updated": response
     }, {
         message: `usuario actualizado:`
+    }
     });
 }
 
@@ -52,34 +53,91 @@ const logout = async (req, res) => {
 
 
 // SEARCH 
-const search = async (req, res) => {
-    res.status(200).send("Funciona");
+// http://localhost:3000/api/search/
+// POST
+/* const postSearch = async (req, res) => {
+    try {
+        const tituloOferta = req.body.search;
+        console.log(`Estamos en el POST buscando esta oferta ${tituloOferta}`);
+        let anuncios = await Anuncio.find({ tituloOferta :  { $regex: tituloOferta, $options: 'i' } }, '-id, -__v');
+        console.log(`Aquí tienes tu ofertita ${anuncios}`);
+
+        res.render("../views/index.pug", anuncios[0]);
+
+       
+         res.redirect("/api/search/" + title); 
+            }
+    catch (error) {
+        console.log(`ERROR: ${error.stack}`);
+        res.status(400).json({msj:`ERROR: ${error.stack}`});
+    }
+} */
+
+// GET
+const getSearch = async (req, res) => {
+    console.log(req.query.search);
+    const tituloOferta = req.query.search;
+    if (tituloOferta){
+        let anuncios =  await Anuncio.find({ tituloOferta :  { $regex: tituloOferta, $options: 'i' } }, '-id, -__v');
+        res.status(200).json(anuncios);
+    }
+    else{
+        res.status(400).send("problemas");
+    }
 }
 
 
 // ADS (admin)
 // http://localhost:3000/api/ads/
+// POST
 const createOffer = async (req, res) => {
-
     console.log(req.body);
-
     try {
         const data = req.body;
         let answer = await new Anuncio(data).save();
         res.status(201).json(answer);
-
     } catch (error) {
         console.log(`ERROR: ${error.stack}`);
         res.status(400).json({ msj: `ERROR: ${error.stack}` });
     }
 }
 
+/* http://localhost:3000/api/ads/Senior Front-end Developer (freelance)
+ PUT
+{
+    "idOferta":1,
+    "tituloOferta":"Senior Front-end Developer (freelance)",
+    "fechaOferta":"Posted 18 hrs ago ",
+    "salarioOferta": 1.500,
+    "descripcionOferta":"Smile is the European leader in open source digital services, combining innovation, technology, and a passion for digital transformation. With nearly 2,000 employees across the globe, we deliver hundreds of strategic digital projects annually for some of the biggest names in the industry. Our expertise spans Digital, Business Apps, Embedded & IoT, and Infrastructure. As part of our team, you will have the opportunity to work on cutting-edge projects, leveraging our extensive knowledge and commitment to open source solutions to drive digital innovation.",
+    "paisOferta": "España",
+    "linkOferta": "https://httpstatusdogs.com/100-continue"
+} */
 const updateOffer = async (req, res) => {
-    res.status(200).send("Funciona");
+    try {
+        const tituloOferta = req.params.name;
+        const newData = req.body;
+        let anuncio = await Anuncio.updateOne({ tituloOferta }, newData)
+        res.status(200).json(anuncio);
+    }
+    catch (error) {
+        console.log(`ERROR: ${error.stack}`);
+        res.status(400).json({ msj: `ERROR: ${error.stack}` }); {
+        }
+    }
 }
 
+// DELETE
 const deleteOffer = async (req, res) => {
-    res.status(200).send("Funciona");
+    try {
+        const tituloOferta = req.params.name;
+        await Anuncio.deleteOne({ tituloOferta });
+        res.status(200).send("Oferta freelance borrada");
+    }
+    catch (error) {
+        console.log(`ERROR: ${error.stack}`);
+        res.status(400).json({ msj: `ERROR: ${error.stack}` });
+    }
 }
 
 
@@ -129,7 +187,7 @@ module.exports = {
     login,
     logout,
 
-    search,
+    getSearch,
 
     createOffer,
     updateOffer,
@@ -168,6 +226,7 @@ module.exports = {
         "fechaOferta":"Posted 30 minutes ago ",
         "salarioOferta": 2.100,
         "descripcionOferta":"We help brands and retailers optimize their marketing strategies, reaching their audiences throughout the customer journey and driving customers to visit physical stores. In 2022, we joined ShopFully, the tech company that is reinventing local shopping worldwide (shopfully.com). With teams in 12 countries, a network of 45 million active users and over 400 partnerships with major retailers and the best-known brands around the world, ShopFully is the European champion and an international leading player in Drive to Store.",
+        "paisOferta": "Portugal",
         "linkOferta": "https://httpstatusdogs.com/100-continue"
     },
     {	
@@ -176,6 +235,7 @@ module.exports = {
         "fechaOferta":"Posted 8 hours ago ",
         "salarioOferta": 1.800,
         "descripcionOferta":"We are looking for a software development manager to manage teams of freelance developers on enterprise-level projects and Proteams' internal software products.",
+        "paisOferta": "Francia",
         "linkOferta": "https://httpstatusdogs.com/100-continue"
     },
     {	
@@ -184,6 +244,7 @@ module.exports = {
         "fechaOferta":"Posted 14 minutes ago ",
         "salarioOferta": 1.750,
         "descripcionOferta":"In 2022, we joined ShopFully, the tech company that is reinventing local shopping worldwide (shopfully.com). With teams in 12 countries, a network of 45 million active users and over 400 partnerships with major retailers and the best-known brands around the world, ShopFully is the European champion and an international leading player in Drive to Store.",
+        "paisOferta": "Japón",
         "linkOferta": "https://httpstatusdogs.com/100-continue"
     }
 ]

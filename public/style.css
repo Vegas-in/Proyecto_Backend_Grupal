@@ -1,12 +1,49 @@
+body{
+    margin: 0;
+}
+
+
+
 .navbar{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 96);
+    padding: 10px;
 }
 
 a{
+    color: black;
+    font-weight: bolder;
     text-decoration: none;
-    background-color: aquamarine;
+    background-color: whitesmoke;
     padding: 7px;
     border-radius: 5px;
-    border: 1px solid blueviolet;
+}
+
+a:hover{
+    font-size: 1.2em;
+    background-color: orange;
+    color: white;
+}
+
+.hero {
+
+    text-align: center;
+
+}
+
+.searcher{
+
+}
+
+.cards_offers{
+    border: 2px solid black;
+}
+
+footer{
+    background-color: rgb(0, 0, 96);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    line-height: 7px;
 }

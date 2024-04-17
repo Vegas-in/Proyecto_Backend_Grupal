@@ -149,7 +149,7 @@ const apiModels = {
   editUserApi,
   getUserByEmail,
   deleteUserApi,
-  deleteFavouriteApi,
-};
+  deleteFavouriteApi
+}
 
 module.exports = apiModels;
