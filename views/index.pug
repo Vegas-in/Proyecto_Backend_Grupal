@@ -1,23 +1,53 @@
 doctype html
-head
 html(lang='en')
-  meta(charset='UTF-8')
-  script(src='https://kit.fontawesome.com/93de5423bf.js' crossorigin='anonymous')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='preconnect' href='https://fonts.googleapis.com')
-  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
-  link(href='https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet')
-  link(rel='icon' type='image/x-icon' href='/')
-  link(rel='stylesheet' href='/style.css')
-  title APP
-
-  include ./headerFalse.pug
-main
-  section.hero
-    h2 OFERTAS FREELANCE
-    input#text_search(type='text', placeholder='What about?', name='looking_for', required='')
-    button#search_button Search
-  section#cards-search_results
-
-  include ./footer.pug
-script(src='./script.js')
+  head
+    meta(charset='UTF-8')
+    // Fontawesome CDN link
+    script(src='https://kit.fontawesome.com/93de5423bf.js' crossorigin='anonymous')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Goolge Fonts CDN link
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet')
+    // Project's own links
+    link(rel='icon' type='image/x-icon' href='/')
+    link(rel='stylesheet' href='/style.css')
+    title APP
+  body
+    // HEADER START
+    // HEADER START
+    header
+      include ./headerFalse.pug
+    // header end
+    // MAIN START
+    main
+      section.hero
+        // main section start
+        h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        h4 Morbi tincidunt augue interdum velit euismod in. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Molestie a iaculis at erat pellentesque adipiscing.
+        input#text_search(type='text', placeholder='What about?', name='looking_for', required='')
+        button#search_button(type='button') Search
+      // main section end
+      section.cards-search-results
+        article.cards-search
+          .card
+            h2 Web Developer
+            p Publicado hace:
+            p Salario:
+            h4
+              | Descripcion:<br>
+              | 'Smile is the European leader in open source digital services, combining innovation, technology, and a passion for digital transformation. With nearly 2,000 employees across the globe, we deliver hundreds of strategic digital projects annually for some of the biggest names in the industry. Our expertise spans Digital, Business Apps, Embedded  IoT, and Infrastructure. As part of our team, you will have the opportunity to work on cutting-edge projects, leveraging our extensive knowledge and commitment to open source solutions to drive digital innovation.'
+            p Donde:
+            .card-buttons
+              a(href='https://httpstatusdogs.com/100-continue') Ver detalles
+              label.add-fav
+                input(type='checkbox')
+                i.fa-solid.fa-heart
+        article.cards-search
+          // FOOTER  START
+          footer
+          // JS SCRIPTS
+          script(src='/index.js')
+    footer
+      include ./footer.pug
+      

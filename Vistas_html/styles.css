@@ -1,0 +1,153 @@
+/*ESTILOS VISTA ADMIN*/
+.admin-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+h2{
+    text-align: center;
+}
+
+
+
+/* ESTILOS VISTA LOG IN- SIGN IN */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: flex-end;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow:scroll;
+    width: 600px;
+    max-width: 90%;
+
+}
+
+.form-container {
+    padding: 40px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"],
+button[type="button"],
+button[type="submit"]{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #2c0b8e;
+    background: #2c0b8e;
+}
+
+input[type="submit"]:hover,
+button[type="button"]:hover,
+button[type="submit"]:hover {
+    background: #fff;
+    color: #2c0b8e
+}
+
+.forgot-password {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forgot-password a {
+    color: #2c0b8e;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+
+/*        ESTILOS MARTES      */
+
+.favorites-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 65%;
+    height: 80vh;
+    overflow: auto;
+    flex-direction: row;
+}
+
+.favorites-cards article {
+    width: 200px;
+    height: 200px;
+    margin: 5px;;
+}
+
+/* Alta usuario */
+.usuarios-view, .anuncios-view{
+    height: 60vh;
+}
+
+/*
+.gallery {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+}
+.gallery li{
+   display: -webkit-flex;
+   display: flex;
+}
+*/

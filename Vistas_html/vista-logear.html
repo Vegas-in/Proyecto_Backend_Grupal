@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--Fontawesome CDN link -->
+    <script
+      src="https://kit.fontawesome.com/93de5423bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Goolge Fonts CDN link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Project's own links -->
+    <link rel="icon" type="image/x-icon" href="/" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>APP</title>
+  </head>
+
+  <body>
+    <main class="log-view">
+      <section class="container">
+        <article class="form-container">
+          <h2>Sign Up</h2>
+          <form action="#">
+            <label for="signup-name">Nombre y apellidos</label>
+            <input
+              type="text"
+              id="signup-name"
+              name="signup-name"
+              required
+            />
+            <label for="signup-username">Nombre de usuario</label>
+            <input
+              type="text"
+              id="signup-username"
+              name="signup-username"
+              required
+            />
+
+            <label for="signup-email">Email</label>
+            <input
+              type="email"
+              id="signup-email"
+              name="signup-email"
+              required
+            />
+
+            <label for="signup-password">Contraseña</label>
+            <input
+              type="password"
+              id="signup-password"
+              name="signup-password"
+              required
+            />
+            <label for="signup-confirm-password">Confirmar contraseña</label>
+            <input type="password" id="signup-confirm-password" name="signup-confirm-password" required>
+
+            <span class="error-message" id="password-error"></span>
+
+            <input type="submit" value="Sign Up" />
+          </form>
+          <article class="form-container">
+            <h2>Login</h2>
+            <form action="#">
+              <label for="login-username">Username</label>
+              <input
+                type="text"
+                id="login-username"
+                name="login-username"
+                required
+              />
+  
+              <label for="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                name="login-password"
+                required
+              />
+  
+              <input type="submit" value="Login" />
+  
+              <div class="forgot-password">
+                  <a href="#">¿Has olvidado tu contraseña?</a>
+            </form>
+          </article>
+        </section>
+    </main>
+  </body>
+  <footer></footer>
+</html>
