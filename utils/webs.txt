@@ -1,0 +1,19 @@
+workana
+-------
+Titulo -- document.querySelector(".project-header h2 a span") -> innerText
+Precio -- document.querySelectorAll(".budget span").innerHTML
+Descripcion -- document.querySelectorAll(".project-body div div").innerText
+Fecha -- document.querySelectorAll(".project-body div span.date")
+Link -- document.querySelectorAll(".project-header h2 a")
+
+
+Guru
+-----
+Titulo -- 
+Precio -- 
+Descripcion -- 
+Fecha --
+Link -- 
+
+
+
