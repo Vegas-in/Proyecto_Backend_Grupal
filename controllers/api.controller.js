@@ -20,9 +20,9 @@ const updateUser = async (req, res) => {
         "item_updated": response
     }, {
         message: `usuario actualizado:`
-    }
-    });
-}
+    })
+};
+
 
 const deleteUser = async (req, res) => {
     let userSearch;
