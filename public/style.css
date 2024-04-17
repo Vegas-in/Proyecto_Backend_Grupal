@@ -1,49 +1,184 @@
-body{
-    margin: 0;
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Montserrat;
 }
 
-
+/*ESTILOS PARA NAVBAR Y PARA LINKS LOG IN/SIGN IN*/
 
 .navbar{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(0, 0, 96);
-    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+    font-size: 1rem;
 }
 
 a{
     color: black;
     font-weight: bolder;
     text-decoration: none;
-    background-color: whitesmoke;
     padding: 7px;
     border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
 }
 
 a:hover{
-    font-size: 1.2em;
-    background-color: orange;
+    font-size: 1rem;
+    background-color: rgba(38, 1, 73, 0.61);
     color: white;
+    cursor: pointer;
 }
 
-.hero {
+/* ESTILOS PARA HERO SECTION Y BUSCADOR*/
 
+.hero{
+    color:white;
+    height: 100vh;
+    background-image: url("/assets/fondo6.jpg");
+    background-size: cover;
+}
+
+.hero h1,h4{
+    padding: 10vw 6vh;
     text-align: center;
-
 }
 
-.searcher{
-
+.hero h1{
+    font-weight: 800;
 }
 
-.cards_offers{
-    border: 2px solid black;
+input #text_search{
+    padding: 10vw 5vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
+#text_search{
+    width: 80vw;
+    height: 5vh;
+    border-radius: 10px;
+    border-color: #ccc;
+    border-width: 1px;
+}
+
+button[type="submit"]{
+    width: 65vw;
+    height: 5vh;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #2c0b8e;
+    background: #2c0b8e; 
+    margin: 6%;
+}
+
+input[type="submit"],
+button[type="button"]
+ {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #2c0b8e;
+    background: #2c0b8e;
+}
+
+input[type="submit"]:hover,
+button[type="button"]:hover,
+button[type="submit"]:hover  {
+    background: #fff;
+    color: #2c0b8e
+}
+
+
+/* ESTILOS PARA LOS RESULTADOS*/
+.cards-search-results{
+    display: flex;
+    height: 100vh;
+    padding: 5vh 5vw;
+    font-family: hind;
+} 
+
+.cards-search{
+    display: flex;
+}
+
+.card h2{
+    font-size: 2rem;
+}
+
+.card h4 {
+    text-align: left;
+    padding: 0;
+    font-weight: 400;
+}
+
+.card p{
+  padding: 2vh 0;  
+}
+
+.add-fav {
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all .5s ease;
+    
+}
+
+.fa-solid {
+    font-size: 2rem;
+    color: #7a7a7a;
+    position: relative;
+    }
+
+.fa-solid:hover{
+    font-size: 2rem;
+    color: #f57fa6;
+    position: relative;
+    }        
+
+.fa-solid:default{
+    font-size: 2rem;
+    color: #7a7a7a;
+    position: relative;
+    }
+        
+input[type="checkbox"] { 
+    position: absolute;
+    opacity: 0;
+    }
+    
+
+    /* ESTILOS PARA FOOTER*/
 footer{
     background-color: rgb(0, 0, 96);
     color: white;
+    font-size: 0.75rem;;
     text-align: center;
-    padding: 10px;
-    line-height: 7px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+footer p{
+    text-align: center;
+    padding: 1%;
 }
