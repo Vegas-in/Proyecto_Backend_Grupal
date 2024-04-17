@@ -1,3 +1,9 @@
+body{
+    margin: 0;
+}
+
+
+
 .navbar{
     display: flex;
     justify-content: space-around;
@@ -20,10 +26,24 @@ a:hover{
     color: white;
 }
 
+.hero {
+
+    text-align: center;
+
+}
+
+.searcher{
+
+}
+
+.cards_offers{
+    border: 2px solid black;
+}
+
 footer{
     background-color: rgb(0, 0, 96);
     color: white;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     line-height: 7px;
 }

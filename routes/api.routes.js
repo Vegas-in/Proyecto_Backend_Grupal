@@ -14,8 +14,7 @@ router.post("/login/", apiController.login);
 router.post("/logout/", apiController.logout);
 
 // http://localhost:3000/api/search/
-router.post("/search", apiController.postSearch);
-router.get("/search/:title", apiController.getSearch);
+router.get("/search", apiController.getSearch);
 
 // http://localhost:3000/api/ads/
 router.post("/ads/", apiController.createOffer);

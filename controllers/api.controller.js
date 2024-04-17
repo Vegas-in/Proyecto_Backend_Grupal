@@ -54,31 +54,35 @@ const logout = async (req, res) => {
 // SEARCH 
 // http://localhost:3000/api/search/
 // POST
-const postSearch = async (req, res) => {
+/* const postSearch = async (req, res) => {
     try {
-        const title = req.body.title;
-        console.log(title);
-        res.redirect("/api/search/" + title);
-    }
+        const tituloOferta = req.body.search;
+        console.log(`Estamos en el POST buscando esta oferta ${tituloOferta}`);
+        let anuncios = await Anuncio.find({ tituloOferta :  { $regex: tituloOferta, $options: 'i' } }, '-id, -__v');
+        console.log(`Aquí tienes tu ofertita ${anuncios}`);
+
+        res.render("../views/index.pug", anuncios[0]);
+
+       
+         res.redirect("/api/search/" + title); 
+            }
     catch (error) {
         console.log(`ERROR: ${error.stack}`);
         res.status(400).json({msj:`ERROR: ${error.stack}`});
     }
-}
+} */
 
 // GET
 const getSearch = async (req, res) => {
-    let tituloOferta = req.query.search;
-    console.log(tituloOferta)
+    console.log(req.query.search);
+    const tituloOferta = req.query.search;
     if (tituloOferta){
-        let anuncios = await Anuncio.find({ tituloOferta }, '-id, -__v');
+        let anuncios =  await Anuncio.find({ tituloOferta :  { $regex: tituloOferta, $options: 'i' } }, '-id, -__v');
         res.status(200).json(anuncios);
     }
     else{
         res.status(400).send("problemas");
     }
-    
-
 }
 
 
@@ -166,7 +170,6 @@ module.exports = {
     login,
     logout,
 
-    postSearch,
     getSearch,
 
     createOffer,
