@@ -3,11 +3,10 @@ const Anuncio = require("../models/mongo.model");
 
 // USER
 const createUser = async (req, res) => {
-    const newUser = req.body; // {title,content,email,category}
+    const newUser = req.body;
     const response = await users.createUser(newUser);
     res.status(201).json({
-        "items_created": response,
-        data: newUser
+        "items_created": response
     },
         {
             message: `usuario creado`
@@ -15,13 +14,13 @@ const createUser = async (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-    const modifiedUser = req.body; // {title,content,date,category,email,old_title}
+    const modifiedUser = req.body;
     const response = await users.editUserApi(modifiedUser);
     res.status(200).json({
-        "items_updated": response,
-        data: modifiedUser
+        "item_updated": response
     }, {
-        message: `usuario creado:`
+        message: `usuario actualizado:`
+    }
     });
 }
 
@@ -30,8 +29,10 @@ const deleteUser = async (req, res) => {
     if (req.params.email) {
         userSearch = await users.getUserByEmail(req.params.email);
         if (userSearch.length > 0) {
-            deleted = await users.deleteUserApi(req.params.email);
-            res.status(200).json({ message: `Se ha borrado ${req.params.email}` })
+            //PRIMERO MANDAMOS BORRAR LOS FAVORITOS Y DESPUES BORRAMOS EL USUARIO
+            await users.deleteFavouriteApi(req.params.email);
+            await users.deleteUserApi(req.params.email);
+            res.status(200).json({ message: `Se ha borrado el usuario con email: ${req.params.email}` })
         } else {
             res.status(404).json("No se ha encontrado el usuario")
         }
@@ -90,15 +91,12 @@ const getSearch = async (req, res) => {
 // http://localhost:3000/api/ads/
 // POST
 const createOffer = async (req, res) => {
-
-    //console.log(req.body);
-
+    console.log(req.body);
     try {
         const data = req.body;
         let answer = await new Anuncio(data).save();
         res.status(201).json(answer);
-    }
-    catch (error) {
+    } catch (error) {
         console.log(`ERROR: ${error.stack}`);
         res.status(400).json({ msj: `ERROR: ${error.stack}` });
     }
@@ -145,11 +143,30 @@ const deleteOffer = async (req, res) => {
 
 // FAVOURITE
 const createFavorite = async (req, res) => {
-    res.status(200).send("Funciona");
+    const newFavourite = req.body;
+    const response = await users.createFavorite(newFavourite);
+    res.status(201).json({
+        "item_created": response
+    },
+        {
+            message: `favorito creado`
+        });
 }
 
 const deleteFavorite = async (req, res) => {
-    res.status(200).send("Funciona");
+    let userSearch;
+    if (req.params.email) {
+        userSearch = await users.getUserByEmail(req.params.email);
+        if (userSearch.length > 0) {
+            await users.deleteFavouriteApi(req.params.email);
+            res.status(200).json({ message: `Se han borrado los favoritos del usuario con email: ${req.params.email}` })
+        } else {
+            res.status(404).json("No se ha encontrado favoritos")
+        }
+    }
+    else {
+        res.status(404).json("No se ha encontrado favoritos")
+    }
 }
 
 // PASSWORD

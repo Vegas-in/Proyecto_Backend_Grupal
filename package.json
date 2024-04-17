@@ -16,9 +16,11 @@
     "mongoose": "^8.3.1",
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
+    "pg": "^8.11.5",
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "puppeteer": "^22.6.5"
   }
 }

@@ -21,9 +21,9 @@ router.post("/ads/", apiController.createOffer);
 router.put("/ads/:name", apiController.updateOffer);
 router.delete("/ads/:name", apiController.deleteOffer);
 
-// http://localhost:3000/api/favourite/
-router.post("/favourite/", apiController.createFavorite);
-router.delete("/favourite/", apiController.deleteFavorite);
+// http://localhost:3000/api/favorite/
+router.post("/favorite/", apiController.createFavorite);
+router.delete("/favorite/:email", apiController.deleteFavorite);
 
 // http://localhost:3000/api/recoverpassword/
 router.get("/recoverpassword/", apiController.recoverPassword);

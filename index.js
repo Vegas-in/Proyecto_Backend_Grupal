@@ -28,10 +28,10 @@ app.use('/api/', apiRoutes);
 
 // Configuración de PUG - Motor de plantillas
 app.set('view engine', 'pug');
-app.set('views','./views');
+app.set('views', './views');
 
 //app.use(error404);
-app.use("*",error404); // Middleware que gestiona el error 404
+app.use("*", error404); // Middleware que gestiona el error 404
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
