@@ -1,61 +1,23 @@
 doctype html
 head
+html(lang='en')
   meta(charset='UTF-8')
-  // Fontawesome CDN link
   script(src='https://kit.fontawesome.com/93de5423bf.js' crossorigin='anonymous')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  // Goolge Fonts CDN link
   link(rel='preconnect' href='https://fonts.googleapis.com')
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet')
-  // Project's own links
   link(rel='icon' type='image/x-icon' href='/')
   link(rel='stylesheet' href='/style.css')
   title APP
-// HEADER START
-header
+
   include ./headerFalse.pug
-// header end
-// MAIN START
 main
   section.hero
-    // main section start
     h2 OFERTAS FREELANCE
-    .search
-      // search input
-      form#searchForm(action='/api/search' method='POST')
-        input#searchInput(type='text' placeholder='Search' name='search')
-        button#userQuery(type='submit')
-          i.fa.fa-solid.fa-magnifying-glass
-  // main section end
-  section.cards-search_results
-    article.cards-search
-      // ESTRUCTURA TARJETAS DE EJEMPLO
-      // cards text
-      .card
-        img(src='https://images.unsplash.com/photo-1652540496556-80b6d2f3ab04?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' style='width: 30vw')
-        label.add-fav
-          input(type='checkbox')
-          i.fa-solid.fa-heart
-        button#fetch.btn Ver detalle
-    article.cards-search
-      // cards text
-      .card
-        img(src='https://images.unsplash.com/photo-1652540496556-80b6d2f3ab04?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' style='width: 30vw')
-        label.add-fav
-          input(type='checkbox')
-          i.fa-solid.fa-heart
-        button#fetch.btn Ver detalle
-    article.cards-search
-      // cards text
-      .card
-        img(src='https://images.unsplash.com/photo-1652540496556-80b6d2f3ab04?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' style='width: 30vw')
-        label.add-fav
-          input(type='checkbox')
-          i.fa-solid.fa-heart
-        button#fetch.btn Ver detalle
-// main section end
-// FOOTER  START
-footer
-// JS SCRIPTS
-script(src='/index.js')
+    input#text_search(type='text', placeholder='What about?', name='looking_for', required='')
+    button#search_button Search
+  section#cards-search_results
+
+  include ./footer.pug
+script(src='./script.js')
