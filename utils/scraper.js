@@ -54,6 +54,7 @@ const scrap = async (url) => {
         // En este caso , en el CB filtramos el array de items, guardando en un nuevo array
 
         /********** A RELLENAR page.$eval(selector, function)  *********/
+
         //Buscamos todos los titulos de la web https://www.guru.com/d/freelancers/. Esto es como hacer el querySelectorAll
         const tmpGuru = await page.$$eval(".findGuruRecord__topService > div > div > h2 > a", res => res.map(a => a.href));
 
@@ -79,4 +80,3 @@ exports.scrap = scrap;
 
 /********** DESCOMENTAR PARA PROBAR *********/
 //scrap("https://www.guru.com/d/freelancers/").then(data => console.log(data))
-

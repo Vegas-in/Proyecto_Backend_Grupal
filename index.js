@@ -23,8 +23,9 @@ const webRoutes = require("./routes/web.routes");
 const apiRoutes = require("./routes/api.routes");
 
 // Rutas
-app.use('/', webRoutes);
 app.use('/api/', apiRoutes);
+app.use('/', webRoutes);
+
 
 // Configuración de PUG - Motor de plantillas
 app.set('view engine', 'pug');
