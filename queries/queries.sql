@@ -2,10 +2,10 @@
 CREATE TABLE usuarios (
     user_id serial NOT NULL PRIMARY KEY UNIQUE,
     isAdmin boolean DEFAULT false,
-    username varchar(45) NOT NULL,
+    username varchar(45),
     nombre varchar(45) NOT NULL,
     apellidos varchar(255),
-    password varchar(45) NOT NULL,
+    password varchar(45),
     email varchar(45) NOT NULL UNIQUE
 );
 
