@@ -1,6 +1,37 @@
 const users = require("../models/sql.model");
 const Anuncio = require("../models/mongo.model");
+
 const jwt = require("jsonwebtoken");
+
+const Scraper = require("../utils/scraper");
+
+const dataPrueba = [
+    {
+        "tituloOferta": "Transcription Team Leader & Reviewer",
+        "fechaOferta": "Oct 2020",
+        "salarioOferta": "$25/hr · Starting at $100",
+        "descripcionOferta": "I generally work in transcription, regardless the language, i have the experience to understand the tools and guidelines, the speed and accuracy to get the quality & quantity needed I mainly focus on forming my own teams and get large batches of work done under my management and supervision with the quality and deadlines needed",
+        "paisOferta": "istanbul, Istanbul, Turkey",
+        "linkOferta": "www.cervezucas.com"
+    },
+    {
+        "tituloOferta": "IT & Networking, Web Design, Pentesting",
+        "fechaOferta": "Sep 2020",
+        "salarioOferta": "$175/hr · Starting at $1K",
+        "descripcionOferta": "Web Application Security Tests (Penetration Tests) – I can provide them from your internal network and from Internet. I use Blackbox, GreyBox and WhiteBox tests. Load, Stress, Performance tests for Web Applications. I can test how your application will behave during expected or unexpected load from visitors. I specialize in Digital Transformation, or taking a company's existing IT and moving it into cloud environments. 12 years experience in IT Security - I was a manager and a security specialist.",
+        "paisOferta": "Dubai, Dubai, United Arab Emirates",
+        "linkOferta": "www.quesitos.com"
+    },
+    {
+        "tituloOferta": "Web Development",
+        "fechaOferta": "Nov 2005",
+        "salarioOferta": "$45/hr · Starting at $1K",
+        "descripcionOferta": "Full-cycle web development services — we can handle everything from classic websites to multilevel SaaS platforms with cutting-edge technologies on board, providing you with the highest quality results.",
+        "paisOferta": "Kfar Saba, Tel Aviv, Israel",
+        "linkOferta": "www.patatitas.com"
+    }
+];
+
 
 // USER
 const createUser = async (req, res) => {
@@ -118,20 +149,20 @@ const logout = async (req, res) => {
 const getSearch = async (req, res) => {
     console.log(req.query.search);
     const tituloOferta = req.query.search;
-    if (tituloOferta){
-        let anuncios =  await Anuncio.find({ tituloOferta :  { $regex: tituloOferta, $options: 'i' } }, '-id, -__v');
+    if (tituloOferta) {
+        let anuncios = await Anuncio.find({ tituloOferta: { $regex: tituloOferta, $options: 'i' } }, '-id, -__v');
         res.status(200).json(anuncios);
     }
-    else{
+    else {
         res.status(400).send("problemas");
     }
 }
 
 
 // ADS (admin)
-// http://localhost:3000/api/ads/
+// http://localhost:3000/api/ads/manual
 // POST
-const createOffer = async (req, res) => {
+const createOfferManual = async (req, res) => {
     console.log(req.body);
     try {
         const data = req.body;
@@ -141,7 +172,26 @@ const createOffer = async (req, res) => {
         console.log(`ERROR: ${error.stack}`);
         res.status(400).json({ msj: `ERROR: ${error.stack}` });
     }
+};
+
+// http://localhost:3000/api/ads/scraping
+// POST
+const createOfferScrap = async (req, res) => {
+
+    await Anuncio.deleteMany({ });
+
+    let data = await Scraper.scrap("https://www.guru.com/d/freelancers/");
+
+    data.forEach(element => {
+         
+        new Anuncio(element).save();
+       
+    });
+
+    res.status(201).json("Base de datos actualizada");
+
 }
+
 
 /* http://localhost:3000/api/ads/Senior Front-end Developer (freelance)
  PUT
@@ -149,7 +199,7 @@ const createOffer = async (req, res) => {
     "idOferta":1,
     "tituloOferta":"Senior Front-end Developer (freelance)",
     "fechaOferta":"Posted 18 hrs ago ",
-    "salarioOferta": 1.500,
+    "salarioOferta": "1.500",
     "descripcionOferta":"Smile is the European leader in open source digital services, combining innovation, technology, and a passion for digital transformation. With nearly 2,000 employees across the globe, we deliver hundreds of strategic digital projects annually for some of the biggest names in the industry. Our expertise spans Digital, Business Apps, Embedded & IoT, and Infrastructure. As part of our team, you will have the opportunity to work on cutting-edge projects, leveraging our extensive knowledge and commitment to open source solutions to drive digital innovation.",
     "paisOferta": "España",
     "linkOferta": "https://httpstatusdogs.com/100-continue"
@@ -231,7 +281,8 @@ module.exports = {
 
     getSearch,
 
-    createOffer,
+    createOfferManual,
+    createOfferScrap,
     updateOffer,
     deleteOffer,
 
@@ -292,3 +343,5 @@ module.exports = {
 ]
 }
 */
+
+/** */

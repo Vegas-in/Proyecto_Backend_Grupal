@@ -21,7 +21,8 @@ router.get("/logout/", apiController.logout);
 router.get("/search", apiController.getSearch);
 
 // http://localhost:3000/api/ads/
-router.post("/ads/", apiController.createOffer);
+router.post("/ads/manual", apiController.createOfferManual);
+router.post("/ads/scraping", apiController.createOfferScrap);
 router.put("/ads/:name", apiController.updateOffer);
 router.delete("/ads/:name", apiController.deleteOffer);
 
