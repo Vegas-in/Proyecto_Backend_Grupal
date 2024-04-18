@@ -1,6 +1,6 @@
 const users = require("../models/sql.model");
 const Anuncio = require("../models/mongo.model");
-// const scrap = require("../utils/scraper");
+const Scraper = require("../utils/scraper");
 
 const dataPrueba = [
     {
@@ -133,13 +133,19 @@ const createOfferManual = async (req, res) => {
 // http://localhost:3000/api/ads/scraping
 // POST
 const createOfferScrap = async (req, res) => {
-    // let data = await scrap("https://www.guru.com/d/freelancers/");
-    console.log(data);
+
+    await Anuncio.deleteMany({ });
+
+    let data = await Scraper.scrap("https://www.guru.com/d/freelancers/");
 
     data.forEach(element => {
-        let answer = new Anuncio(element).save();
-        res.status(201).json(answer);
+         
+        new Anuncio(element).save();
+       
     });
+
+    res.status(201).json("Base de datos actualizada");
+
 }
 
 
