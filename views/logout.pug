@@ -16,28 +16,13 @@ html(lang='en')
   body
     // HEADER START
     header
-      include ./headerTrue.pug
-    main
-      section.profile-info
-          h2 Información Personal
-          ul
-              li
-                  strong Nombre y apellidos:
-                  br
-                  |  Juan Pérez
-              li
-                  strong Correo Electrónico:
-                  br
-                  |  juan@example.com
-              li
-                  strong Username:
-                  br
-                  |  blabla
-              li
-                  strong Cambiar Contraseña: 
-                  br
-                  a(href='#') Reset password
-           
+      include ./headerFalse.pug
 
+            Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+            })
     footer
       include ./footer.pug   

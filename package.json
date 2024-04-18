@@ -17,7 +17,8 @@
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
     "pg": "^8.11.5",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "sweetalert2": "^11.10.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.0",

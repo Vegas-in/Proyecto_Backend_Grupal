@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    // Fontawesome CDN link
+    script(src='https://kit.fontawesome.com/93de5423bf.js' crossorigin='anonymous')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Goolge Fonts CDN link
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet')
+    // Project's own links
+    link(rel='icon' type='image/x-icon' href='/')
+    link(rel='stylesheet' href='/style.css')
+    title APP
+  body
+    // HEADER START
+    header
+        include ./headerAdmin.pug
+
+    main.usuarios-view-container
+        section.usuarios-view
+            form(action='' method='post')
+            h2 Formulario de Registro de Usuario
+            article
+                label(for='full_name') Nombre Completo:
+                br
+                input#full_name(type='text' name='full_name' required='')
+            article
+                label(for='username') Nombre de Usuario:
+                br
+                input#username(type='text' name='username' required='')
+            article
+                label(for='email') Correo Electrónico:
+                br
+                input#email(type='email' name='email' required='')
+            article
+                label(for='password') Contraseña:
+                br
+                input#password(type='password' name='password' required='')
+            article
+                input(type='submit' value='Registrar Usuario')
+        section.usuarios-list
+            h4 Lista de anuncios:
+            ul
+                li
+                    input(type='submit' value='Eliminar Usuario')
+                li
+                    input(type='submit' value='Eliminar Usuario')
+                li
+                    input(type='submit' value='Eliminar Usuario')
+                li
+                    input(type='submit' value='Eliminar Usuario')
+                li
+                    input(type='submit' value='Eliminar Usuario')
+    
+
+    footer
+        include ./footer.pug   

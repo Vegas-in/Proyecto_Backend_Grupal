@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const router = require("express").Router();
 // ESTAMOS ENLAZANDO/IMPORTANDO EL CONTROLADOR PARA ENCONTRAR LOS METODOS.
 // REPRESENTA EL OBJETO CON METODOS QUE MANEJAN LAS PETICIONES
-const apiController = require('../controllers/api.controller');
+const apiController = require("../controllers/api.controller");
 
 // http://localhost:3000/api/user/
 router.post("/user/", apiController.createUser);

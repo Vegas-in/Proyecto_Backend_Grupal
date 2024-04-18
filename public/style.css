@@ -2,8 +2,10 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: Montserrat;
+}
+body{
+    height:100vh;
 }
 
 /*ESTILOS PARA NAVBAR Y PARA LINKS LOG IN/SIGN IN*/
@@ -28,7 +30,7 @@ a{
 
 a:hover{
     font-size: 1rem;
-    background-color: rgba(38, 1, 73, 0.61);
+    background-color: #2c0b8e;
     color: white;
     cursor: pointer;
 }
@@ -40,6 +42,10 @@ a:hover{
     height: 100vh;
     background-image: url("/assets/fondo6.jpg");
     background-size: cover;
+    display:flex;
+    flex-direction:column;
+    align-content: center;
+    align-items: center;
 }
 
 .hero h1,h4{
@@ -51,19 +57,28 @@ a:hover{
     font-weight: 800;
 }
 
-input #text_search{
-    padding: 10vw 5vh;
+#search{
+    padding: 5vw 5vh;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-#text_search{
+#text_search, 
+#login-username, 
+#login-password, 
+#signup-name,
+#signup-username, 
+#signup-email, 
+#signup-password, 
+#signup-confirm-password{
     width: 80vw;
-    height: 5vh;
+    height: 4vh;
     border-radius: 10px;
     border-color: #ccc;
     border-width: 1px;
+    margin-bottom: 4vh;
+    padding-left: 2vw;
 }
 
 button[type="submit"]{
@@ -78,25 +93,25 @@ button[type="submit"]{
     border-radius: 5px;
     border: 2px solid #2c0b8e;
     background: #2c0b8e; 
-    margin: 6%;
+    margin: 5%;
 }
 
 input[type="submit"],
 button[type="button"]
  {
-    min-width: 130px;
-    height: 40px;
+    width: 70vw;
+    height: 6vh;
     color: #fff;
-    padding: 5px 10px;
+    padding: 5% 10%;
     font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
+    transition: all 0.3s ease;    outline: none;
     border-radius: 5px;
     border: 2px solid #2c0b8e;
     background: #2c0b8e;
+    margin-left: 4%;
 }
 
 input[type="submit"]:hover,
@@ -105,9 +120,75 @@ button[type="submit"]:hover  {
     background: #fff;
     color: #2c0b8e
 }
+/* ESTILOS VISTA LOG IN- SIGN IN */
 
+.log-view {
+    height: 75vh;
+}
+
+.sign-view {
+    height: 75vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container-log {
+    height: 85vh;
+    padding-top: 3vh;
+}
+
+.form-container-sign {
+    height: 75vh;
+    padding-top: 3vh;
+}
+
+
+.form-container-sign h2,
+.form-container-log h2
+ {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.forgot-password {
+    margin-top: 6vh;
+    text-align: center;
+    
+}
+
+.forgot-password a {
+    color: #2c0b8e;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
 
 /* ESTILOS PARA LOS RESULTADOS*/
+
 .cards-search-results{
     display: flex;
     height: 100vh;
@@ -148,24 +229,98 @@ button[type="submit"]:hover  {
     position: relative;
     }
 
-.fa-solid:hover{
+.fa-solid:hover,
+.fa-solid:checked
+{
     font-size: 2rem;
     color: #f57fa6;
     position: relative;
     }        
-
-.fa-solid:default{
-    font-size: 2rem;
-    color: #7a7a7a;
-    position: relative;
-    }
         
 input[type="checkbox"] { 
     position: absolute;
     opacity: 0;
     }
-    
 
+
+    /* ESTILOS PARA FAVORITOS */
+
+.favorites-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 90vw;
+    height: 100vh;
+    overflow: scroll;
+    padding-left: 10vw;
+    flex-direction: column;
+}
+
+.favorites-cards article {
+    display: flex;
+    width: 60%;
+    height: 60%;
+    margin: 5vw;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/*  ESTILOS PARA VISTA PERFIL*/
+
+.profile-info{
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+main .profile-info {
+    height: 70vh;
+    padding:  8vw;
+    margin-bottom:4%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  
+
+  .profile-info ul {
+    list-style: none;
+    margin-bottom:4%;
+    margin-top:4%;
+  }
+  
+  .profile-info ul li {
+    margin-bottom:4%;
+  }
+  
+  .profile-info ul li a{
+    font-weight: 400;
+    margin-top:25%;
+  }
+
+    /*ESTILOS DASHBOARD*/
+.admin-view{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+.admin-buttons{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    }
+ 
     /* ESTILOS PARA FOOTER*/
 footer{
     background-color: rgb(0, 0, 96);
@@ -176,9 +331,260 @@ footer{
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    padding: 20px 0;
 }
 
-footer p{
-    text-align: center;
-    padding: 1%;
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .footer-content p, .footer-content address {
+    margin: 10px 0;
+  }
+  
+
+
+/* MEDIA QUERIES PARA TABLET */
+@media only screen and (min-width: 770px) {
+    .navbar{
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(255, 255, 255);
+        padding: 5%;
+        font-size: 1rem;
+    }
+
+    .hero h1{
+        font-weight: 600;
+        font-size: 3rem;
+    }
+
+    .hero h4{
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    input[type="submit"],
+    button[type="button"]{
+        font-size: 1.5rem;
+        padding-bottom: 8%;
+        font-weight: 400;
+    }
+
+    footer{
+        justify-content: space-around;
+        font-size: 1rem;
+    }
+    .forgot-password{
+        font-size: 1.5rem;
+    }
+    label {
+        font-size: 1.5rem;
+    }
+
+    .form-container-sign h2, 
+    .form-container-log h2 {
+        margin-bottom: 8%;
+    }
+
+    #search{
+        padding: 4vw 5vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #text_search, 
+    #login-username, 
+    #login-password, 
+    #signup-name,
+    #signup-username, 
+    #signup-email, 
+    #signup-password, 
+    #signup-confirm-password{
+        width: 60vw;
+        height: 5vh;
+        border-radius: 10px;
+        border-color: #ccc;
+        border-width: 1px;
+        margin-bottom: 3vh;
+        padding-left: 2vw;
+        font-size: 1.2rem;
+    }
+
+    input[type="submit"],
+    button[type="button"]
+     {
+        width: 35vw;
+        height: 6vh;
+        color: #fff;
+        padding: 2% 10% 3%;
+        font-weight: 500;
+        font-size: 1.7rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;    
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid #2c0b8e;
+        background: #2c0b8e;
+        margin-left: 4%;
+    }
+
+    .cards-search-results{
+        display: flex;
+        height: 100vh;
+        padding: 5vh 5vw;
+        font-family: hind;
+        font-size: 1.5rem;
+    } 
+
+    .card h2 {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .card p {
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
+
+    .admin-view h2{
+        font-size: 2.5rem;
+        padding-top: 8%;
+
+    }
+}
+
+
+.sign-view {
+    height: 65vh;
+}
+
+
+.form-container-sign {
+    height: 75vh;
+    padding-top: 3vh;
+}
+
+.form-container-sign h2{
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+}
+
+/* MEDIA QUERIES PARA ESCRITORIO */
+@media only screen and (min-width: 1200px) {
+    .navbar{
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(255, 255, 255);
+        padding: 3%;
+        font-size: 1rem;
+    }
+
+    a{
+        font-size: 1.75rem;
+    }
+    a:hover{
+        background-color: #2c0b8e;
+        color: white;
+        cursor: pointer;
+        font-size: 1.75rem;
+    }
+
+    .hero h1,h4{
+        padding: 8vw 10% 0;
+        text-align: center;
+    }
+    
+    .hero h1{
+        font-weight: 600;
+        font-size: 3rem;
+    }
+
+    .hero h4{
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    #search{
+        padding: 2vw 5vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #text_search{
+        width: 60vw;
+        height: 8vh;
+        border-radius: 10px;
+        border-color: #ccc;
+        border-width: 1px;
+        margin-bottom: 4vh;
+        padding-left: 2vw;
+        font-size: 1.2rem;
+    } 
+
+    #login-username, 
+    #login-password, 
+    #signup-name,
+    #signup-username, 
+    #signup-email, 
+    #signup-password, 
+    #signup-confirm-password{
+        width: 45vw;
+        height: 4vh;
+        border-radius: 10px;
+        border-color: #ccc;
+        border-width: 1px;
+        margin-bottom: 2vh;
+        padding-left: 2vw;
+        font-size: 1.2rem;
+    }
+
+    input[type="submit"],
+    button[type="button"]
+     {
+        width: 35vw;
+        height: 6vh;
+        color: #fff;
+        padding: 1% 10% 3%;
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;    outline: none;
+        border-radius: 5px;
+        border: 2px solid #2c0b8e;
+        background: #2c0b8e;
+        margin-left: 4%;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .form-container-sign h2, 
+    .form-container-log h2 {
+        margin-bottom: 6%;
+        font-size: 1.7rem;
+    }
+
+    .forgot-password a {
+        color: #2c0b8e;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+
+    /*  ESTILOS PARA VISTA PERFIL*/
+
+.profile-info{
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
 }

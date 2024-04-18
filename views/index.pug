@@ -25,7 +25,8 @@ html(lang='en')
         // main section start
         h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         h4 Morbi tincidunt augue interdum velit euismod in. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Molestie a iaculis at erat pellentesque adipiscing.
-        input#text_search(type='text', placeholder='What about?', name='looking_for', required='')
+        article#search
+        input#text_search(type='text', placeholder='Ejemplo: Web developer ', name='looking_for', required='')
         button#search_button(type='button') Search
       // main section end
       section.cards-search-results
@@ -44,8 +45,6 @@ html(lang='en')
                 input(type='checkbox')
                 i.fa-solid.fa-heart
         article.cards-search
-          // FOOTER  START
-          footer
           // JS SCRIPTS
           script(src='/index.js')
     footer

@@ -15,27 +15,14 @@ html(lang='en')
     title APP
   body
     // HEADER START
+    // HEADER START
     header
       include ./headerAdmin.pug
-    main
-      section.favorites-cards
-        h2 Tus ofertas guardadas:
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
-            article
-                button.borrar-favorito(type='button') Eliminar
+    main.admin-view
+      h2 Panel Administrador
+      section.admin-buttons
+        button.listar-usuarios(type='button') Ver Usuarios
+        button.listar-anuncios(type='button') Ver Anuncios
 
-    footer
-      include ./footer.pug 
+    footer 
+     include ./footer.pug
