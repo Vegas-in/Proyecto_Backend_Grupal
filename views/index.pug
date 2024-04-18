@@ -14,40 +14,13 @@ html(lang='en')
     link(rel='stylesheet' href='/style.css')
     title APP
   body
-    // HEADER START
-    // HEADER START
-    header
-      include ./headerFalse.pug
-    // header end
-    // MAIN START
+    include ./headerFalse.pug
     main
       section.hero
-        // main section start
         h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         h4 Morbi tincidunt augue interdum velit euismod in. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Molestie a iaculis at erat pellentesque adipiscing.
-        input#text_search(type='text', placeholder='What about?', name='looking_for', required='')
+        input#text_search(type='text', placeholder='What about?', name='looking_for')
         button#search_button(type='button') Search
-      // main section end
-      section.cards-search-results
-        article.cards-search
-          .card
-            h2 Web Developer
-            p Publicado hace:
-            p Salario:
-            h4
-              | Descripcion:<br>
-              | 'Smile is the European leader in open source digital services, combining innovation, technology, and a passion for digital transformation. With nearly 2,000 employees across the globe, we deliver hundreds of strategic digital projects annually for some of the biggest names in the industry. Our expertise spans Digital, Business Apps, Embedded  IoT, and Infrastructure. As part of our team, you will have the opportunity to work on cutting-edge projects, leveraging our extensive knowledge and commitment to open source solutions to drive digital innovation.'
-            p Donde:
-            .card-buttons
-              a(href='https://httpstatusdogs.com/100-continue') Ver detalles
-              label.add-fav
-                input(type='checkbox')
-                i.fa-solid.fa-heart
-        article.cards-search
-          // FOOTER  START
-          footer
-          // JS SCRIPTS
-          script(src='/index.js')
-    footer
-      include ./footer.pug
-      
+      section#cards-search-results
+    include ./footer.pug
+    script(src='/script.js')

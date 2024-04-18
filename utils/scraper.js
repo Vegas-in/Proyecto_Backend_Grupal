@@ -56,7 +56,7 @@ const scrap = async (url) => {
 
         /********** A RELLENAR page.$eval(selector, function)  *********/
         //Buscamos todos los titulos de la web https://www.workana.com/
-        const tmpTitulos = await page.$$eval(".project-header > h2 > a", res => res.map(a => a.href));
+        const tmpTitulos = await page.$$eval("#freelancerList > li:nth-child(2) > div > div.record__details", res => res.map(a => a.href));
 
         //Quitamos los duplicados
         /* const urls = await tmpurls.filter((link, index) => { return tmpurls.indexOf(link) === index }) */
@@ -92,4 +92,4 @@ const scrap = async (url) => {
 exports.scrap = scrap;
 
 /********** DESCOMENTAR PARA PROBAR *********/
-scrap("https://www.workana.com/jobs").then(data => console.log(data))
+//scrap("https://www.guru.com/d/freelancers/").then(data => console.log(data))
