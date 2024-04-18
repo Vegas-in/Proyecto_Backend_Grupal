@@ -95,7 +95,7 @@ const login = async (req, res) => {
 
     //Estos son los pasos para crear un token si la autenticación es exitosa
     const payload = {
-        //save here data
+        email: mail,
         check: true
     };
     const token = jwt.sign(payload, `secret_key`, {
