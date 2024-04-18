@@ -12,26 +12,25 @@ const extractProductData = async (url, browser) => {
         await page.goto(url)
 
         // Utilizamos el método newPage.$eval(selector, function) y almacenamos en productData:
-
+        
         /********** A RELLENAR todos los page.$eval(selector, function)  *********/
-        //titulo
-        productData['name'] = await page.$eval(".productTitle", name => name.innerHTML)
-        //precio
-        productData['price'] = await page.$eval("#actualprice", price => price.innerHTML)
-        //imagenes
-        productData['img'] = await page.$eval("#productmainimageitem", img => img.src)
-        //info
-        productData['info'] = await page.$eval(".productextrainfo", info=>info.innerText)
-        //descripción
-        productData['description'] = await page.$eval(".productdetailinfocontainer", description=>description.innerText.slice(0,200) + '...')
-
+        productData['tituloOferta'] = await page.$eval(".name", name => name.innerText)
+        productData['fechaOferta'] = await page.$eval("#freelancer-details > div.p-box.p-identity > div:nth-child(2) > dl > dd:nth-child(10)", fechaOferta => fechaOferta.innerHTML)
+        productData['salarioOferta'] = await page.$eval(".serviceListing__rates", salarioOferta => salarioOferta.innerText)
+        if(await page.$("#profileApp div main section div article div div div p")) {
+            productData['descripcionOferta'] = await page.$eval("#profileApp div main section div article div div div p", descripcionOferta=>descripcionOferta.innerText)
+        }
+        else{
+            productData['descripcionOferta'] = await page.$eval("#profileApp div main section div article div div div", descripcionOferta=>descripcionOferta.innerText)
+        }
+        productData['paisOferta'] = await page.$eval("#freelancer-details > div.p-box.p-identity > div:nth-child(1) > div.profile-avatar > div.profile-avatar__info > p.profile-avatar__info__location > span:nth-child(2)", paisOferta=>paisOferta.innerText)
+        productData['linkOferta'] = url;
         return productData // Devuelve los datos de un producto
     }
     catch (err) {
         // Devolvemos el error 
         return { error: err }
     }
-
 }
 
 
@@ -55,29 +54,17 @@ const scrap = async (url) => {
         // En este caso , en el CB filtramos el array de items, guardando en un nuevo array
 
         /********** A RELLENAR page.$eval(selector, function)  *********/
-        //Buscamos todos los titulos de la web https://www.workana.com/
-        const tmpTitulos = await page.$$eval("#freelancerList > li:nth-child(2) > div > div.record__details", res => res.map(a => a.href));
 
-        //Quitamos los duplicados
-        /* const urls = await tmpurls.filter((link, index) => { return tmpurls.indexOf(link) === index }) */
-
-        console.log("titulos capurados", tmpTitulos)
-        // Me quedo con los 20 primeros productos, porque sino es muy largo
-        /* const urls2 = urls.slice(0, 21); */
-
-        // Filtramos los productos
-        // Extraemos el dato de cada producto
-        // await extractProductData(urls2[productLink],browser)
-
-        /* console.log(`${urls2.length} links encontrados`); */
+        //Buscamos todos los titulos de la web https://www.guru.com/d/freelancers/. Esto es como hacer el querySelectorAll
+        const tmpGuru = await page.$$eval(".findGuruRecord__topService > div > div > h2 > a", res => res.map(a => a.href));
 
         // Iteramos el array de urls con un bucle for/in y ejecutamos la promesa extractProductData por cada link en el array. Luego pusheamos el resultado a scraped data
-      /*    for(productLink in urls2){
-            const product = await extractProductData(urls2[productLink],browser)
+          for(productLink in tmpGuru){
+            const product = await extractProductData(tmpGuru[productLink],browser)
             scrapedData.push(product)
         }
         
-        console.log(scrapedData, "Lo que devuelve mi función scraper", scrapedData.length) */
+        console.log(scrapedData, "Lo que devuelve mi función scraper", scrapedData.length)
 
         // cerramos el browser con el método browser.close
         await browser.close()
