@@ -1,5 +1,6 @@
 const users = require("../models/sql.model");
 const Anuncio = require("../models/mongo.model");
+const jwt = require("jsonwebtoken");
 
 // USER
 const createUser = async (req, res) => {
@@ -44,11 +45,51 @@ const deleteUser = async (req, res) => {
 
 // LOGIN-LOGOUT
 const login = async (req, res) => {
-    res.status(200).send("Funciona");
+
+    const userData = req.user._json;
+
+    const { email: mail, given_name: name, family_name: surname }  = userData;
+    const user = {
+        email: mail,
+        nombre: name,
+        apellidos: surname
+    }
+
+    let userSearch = await users.getUserByEmail(mail);
+    console.log("esto es usersearch " + userSearch);
+    if (userSearch.length == 0) {
+        users.createUser(user);
+    }   
+    
+
+    //Estos son los pasos para crear un token si la autenticación es exitosa
+    const payload = {
+        //save here data
+        check: true
+    };
+    const token = jwt.sign(payload, `secret_key`, {
+        expiresIn: "20m"
+    });
+
+    console.log("Esto es para ver token"+token);
+    //Almacenamos el token en las cookies
+    res.cookie("access-token", token, {
+        httpOnly: true,
+        sameSite: "strict",
+    }).render("../views/indexLogin");
+};
+
+const failure = async (req, res) => {
+    res.send('UUPSS!! ALGO VA MAL... HOUSTON TENEMOS PROBLEMAS');
 }
 
 const logout = async (req, res) => {
-    res.status(200).send("Funciona");
+    //eliminamos la sesión y limpiamos el token de las cookies.
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        req.session.destroy();
+        res.clearCookie("access-token").redirect("/");
+    })
 }
 
 
@@ -185,6 +226,7 @@ module.exports = {
     deleteUser,
 
     login,
+    failure,
     logout,
 
     getSearch,

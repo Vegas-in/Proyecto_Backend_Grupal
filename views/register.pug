@@ -22,14 +22,16 @@ html(lang='en')
             article.form-container
             h2 Sign Up
             form(action='#')
-                label(for='signup-name') Nombre y apellidos
-                input#signup-name(type='text' name='signup-name' required='')
+                label(for='signup-name') Nombre
+                input#signup-name(type='text' name='signupName' required='')
+                label(for='signup-name') Apellidos
+                input#signup-name(type='text' name='signupSurname' required='')
                 label(for='signup-username') Nombre de usuario
-                input#signup-username(type='text' name='signup-username' required='')
+                input#signup-username(type='text' name='signupUsername' required='')
                 label(for='signup-email') Email
-                input#signup-email(type='email' name='signup-email' required='')
+                input#signup-email(type='email' name='signupEmail' required='')
                 label(for='signup-password') Contraseña
-                input#signup-password(type='password' name='signup-password' required='')
+                input#signup-password(type='password' name='signupPassword' required='')
                 label(for='signup-confirm-password') Confirmar contraseña
                 input#signup-confirm-password(type='password' name='signup-confirm-password' required='')
                 span#password-error.error-message
