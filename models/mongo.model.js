@@ -26,8 +26,7 @@ const objectSchema = {
         required: true 
     },
     descripcionOferta:{
-        type: String, 
-        required: true
+        type: String
     },
     paisOferta: {
         type: String, 
