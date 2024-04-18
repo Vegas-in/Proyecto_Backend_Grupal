@@ -5,7 +5,7 @@ const getIndex = async (req, res) => {
 }   
 
 const getSignUp = async (req, res) => {
-    res.status(200).send("../views/signUp.pug");
+    res.status(200).render("../views/register.pug");
 }
 
 const getLogin = async (req, res) => {
@@ -25,7 +25,7 @@ const getUsers = async (req, res) => {
 }
 
 const getDashboard = async (req, res) => {
-    res.status(200).send("../views/jobsOffers.pug");
+    res.status(200).render("../views/index.pug");
 }
 
 module.exports = {
