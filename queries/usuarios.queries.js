@@ -5,11 +5,11 @@ const usuariosQueries = {
     tablaUsuarios: `CREATE TABLE usuarios (
         user_id serial NOT NULL PRIMARY KEY UNIQUE,
         isAdmin boolean DEFAULT false,
-        username varchar(45) NOT NULL,
-        nombre varchar(45) NOT NULL,
+        username varchar(45),
+        nombre varchar(45),
         apellidos varchar(255),
-        password varchar(45) NOT NULL,
-        email varchar(45) NOT NULL UNIQUE);`,
+        password varchar(45),
+        email varchar(45)UNIQUE);`,
 
     /* -- Insertar datos en tabla usuarios */
     insertarUsuario: `INSERT INTO usuarios (isAdmin, username, nombre, apellidos, password, email)

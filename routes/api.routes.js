@@ -1,7 +1,9 @@
 const router = require("express").Router();
 // ESTAMOS ENLAZANDO/IMPORTANDO EL CONTROLADOR PARA ENCONTRAR LOS METODOS.
 // REPRESENTA EL OBJETO CON METODOS QUE MANEJAN LAS PETICIONES
-const apiController = require("../controllers/api.controller");
+const apiController = require('../controllers/api.controller');
+const passport = require("passport");
+require("../middlewares/auth");
 
 // http://localhost:3000/api/user/
 router.post("/user/", apiController.createUser);
@@ -10,14 +12,17 @@ router.delete("/user/:email", apiController.deleteUser);
 
 // http://localhost:3000/api/login/
 // http://localhost:3000/api/logout/
-router.post("/login/", apiController.login);
-router.post("/logout/", apiController.logout);
+router.get("/login", passport.authenticate("google", { scope: ['email', 'profile'], prompt: "select_account" }));
+
+router.get('/auth/failure', apiController.failure)
+router.get("/logout/", apiController.logout);
 
 // http://localhost:3000/api/search/
 router.get("/search", apiController.getSearch);
 
 // http://localhost:3000/api/ads/
-router.post("/ads/", apiController.createOffer);
+router.post("/ads/manual", apiController.createOfferManual);
+router.post("/ads/scraping", apiController.createOfferScrap);
 router.put("/ads/:name", apiController.updateOffer);
 router.delete("/ads/:name", apiController.deleteOffer);
 
