@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "ca34c488-4b6b-47c7-9a20-a4b436ecbd2a",
+		"name": "Back_Freelance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34037095"
+	},
+	"item": [
+		{
+			"name": "CrearUsuarioSQL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"isAdmin\": \"false\",\r\n  \"username\": \"Zubi\",\r\n  \"nombre\": \"Andoni\",\r\n  \"apellidos\": \"Zubizarreta\",\r\n  \"password\": \"99999\",\r\n  \"email\":\"zubi@correo.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearOfertaManual",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"tituloOferta\":\"Senior Front-end Developer (freelance)\",\r\n\t\"fechaOferta\":\"Posted 18 hrs ago \",\r\n    \"salarioOferta\": \"1.500\",\r\n\t\"descripcionOferta\":\"Smile is the European leader in open source digital services, combining innovation, technology, and a passion for digital transformation. With nearly 2,000 employees across the globe, we deliver hundreds of strategic digital projects annually for some of the biggest names in the industry. Our expertise spans Digital, Business Apps, Embedded & IoT, and Infrastructure. As part of our team, you will have the opportunity to work on cutting-edge projects, leveraging our extensive knowledge and commitment to open source solutions to drive digital innovation.\",\r\n\t\"paisOferta\": \"España\",\r\n\t\"linkOferta\": \"https://httpstatusdogs.com/100-continue\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/ads/manual",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ads",
+						"manual"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearOfertasScraper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"tituloOferta\":\"Senior Front-end Developer (freelance)\",\r\n\t\"fechaOferta\":\"Posted 18 hrs ago \",\r\n    \"salarioOferta\": \"1.500\",\r\n\t\"descripcionOferta\":\"Smile is the European leader in open source digital services, combining innovation, technology, and a passion for digital transformation. With nearly 2,000 employees across the globe, we deliver hundreds of strategic digital projects annually for some of the biggest names in the industry. Our expertise spans Digital, Business Apps, Embedded & IoT, and Infrastructure. As part of our team, you will have the opportunity to work on cutting-edge projects, leveraging our extensive knowledge and commitment to open source solutions to drive digital innovation.\",\r\n\t\"paisOferta\": \"España\",\r\n\t\"linkOferta\": \"https://httpstatusdogs.com/100-continue\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/ads/scraping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ads",
+						"scraping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearFavoritoSQL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"cervantes@email.com\",\r\n  \"title\": \"Diseñaré un sitio web creativo y único\",\r\n  \"anuncio_id\": 2,\r\n  \"path\": \"https://es.fiverr.com/hipinspire/design-creative-and-unique-website?context_referrer=subcategory\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/favorite/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorite",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarUsuarioSQL",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"isAdmin\": \"true\",\r\n  \"username\": \"Zubi\",\r\n  \"nombre\": \"Andoni\",\r\n  \"apellidos\": \"Zubizarreta Agoitia\",\r\n  \"email\":\"zubi@correo.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/zubi@correo.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"zubi@correo.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostrarUsuarioSQL",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"isAdmin\": \"true\",\r\n  \"username\": \"Zubi\",\r\n  \"nombre\": \"Andoni\",\r\n  \"apellidos\": \"Zubizarreta Agoitia\",\r\n  \"password\": \"99999\",\r\n  \"email\":\"zubi@correo.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BorrarUsuarioSQL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/zubi@correo.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"zubi@correo.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BorrarFavoritoSQL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/favorite/cervantes@email.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorite",
+						"cervantes@email.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
