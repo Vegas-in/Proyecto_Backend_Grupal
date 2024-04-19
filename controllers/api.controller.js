@@ -101,13 +101,14 @@ const login = async (req, res) => {
     const token = jwt.sign(payload, `secret_key`, {
         expiresIn: "20m"
     });
-
+    
     console.log("Esto es para ver token"+token);
     //Almacenamos el token en las cookies
     res.cookie("access-token", token, {
         httpOnly: true,
         sameSite: "strict",
     }).render("../views/indexLogin");
+    
 };
 
 const failure = async (req, res) => {
