@@ -49,7 +49,7 @@ a:hover{
 }
 
 .hero h1,h4{
-    padding: 10vw 6vh;
+    padding: 8vw 3vh;
     text-align: center;
 }
 
@@ -58,7 +58,10 @@ a:hover{
 }
 
 .hero h1{
-    font-weight: 800;
+    font-weight: 700;
+}
+.hero h4{
+    font-weight: 400;
 }
 
 #search{
@@ -107,6 +110,7 @@ button[type="button"]
     height: 6vh;
     color: #fff;
     padding: 5% 10%;
+    margin: 10px;
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
@@ -430,6 +434,7 @@ footer{
         height: 6vh;
         color: #fff;
         padding: 2% 10% 3%;
+        margin: 10px;
         font-weight: 500;
         font-size: 1.7rem;
         text-align: center;
@@ -561,6 +566,7 @@ footer{
         height: 6vh;
         color: #fff;
         padding: 1% 10% 3%;
+        margin: 10px;
         font-weight: 500;
         font-size: 2rem;
         text-align: center;

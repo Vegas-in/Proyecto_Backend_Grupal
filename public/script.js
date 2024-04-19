@@ -17,7 +17,7 @@ document.querySelector("#search_button").addEventListener("click", function () {
                     <input type="checkbox" />
                     <i class="fa-solid fa-heart"></i>
                   </label>
-                    <a href="${element.linkOferta}">Link</a>
+                    <a href="${element.linkOferta}" target="_blank">Link</a>
                 </article>`)
       )
     );

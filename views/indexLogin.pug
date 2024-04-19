@@ -17,10 +17,12 @@ html(lang='en')
     include ./headerTrue.pug
     main
       section.hero
-        h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        h4 Morbi tincidunt augue interdum velit euismod in. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Molestie a iaculis at erat pellentesque adipiscing.
+        h1 "Descubre nuevas oportunidades para impulsar tu carrera. Conecta con empleos emocionantes y desafiantes en nuestra plataforma" 
+        h4 Encuentra Empleos Freelance en Desarrollo a tu Medida
         input#text_search(type='text', placeholder='What about?', name='looking_for')
         button#search_button(type='button') Search
+        form(action='/api/ads/scraping', method='POST')
+          input(type='submit', value='Scraping')
       section#cards-search-results
     include ./footer.pug
     script(src='/script.js')
