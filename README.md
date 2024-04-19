@@ -31,10 +31,11 @@ Autores:
 Puedes ver la aplicación en funcionamiento aquí:
 https://proyecto-backend-grupal.onrender.com/
 
-Para ver el proyecto en tu IDE, clona y en terminal escribe 
+Para ver el proyecto en tu IDE, clona y en terminal escribe el siguiente comando para descargar node modules y las dependencias necesarias:
 ```sh
 npm ci
 ```
+Tendrás que incluir tus credenciales en el archivo .env
 
 ## Especificaciones
 
@@ -49,9 +50,9 @@ Requisitos:
 
 ![Captura de pantalla 2024-04-18 182929](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/447a5c97-f624-4896-ac69-c040bc0a5ce8)
 ![Captura de pantalla 2024-04-18 182956](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/2aaf29c7-946e-4c76-837e-65470b03eec6)
-
 ![Captura de pantalla 2024-04-19 102059](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/69760fdb-4e63-42a9-bf21-f5ed54b76d12)
 ![Captura de pantalla 2024-04-11 183215](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/3221a2c2-1e5b-49fb-acc0-1f0b6aa36051)
+![image (1)](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/5d395293-e766-4c97-a6a9-6f5ab91509ab)
 
 
 ## Endpoints
