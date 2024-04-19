@@ -47,7 +47,11 @@ Requisitos:
  - Aplicación de técnicas de web scraping..
  - Desarrollo de una aplicación mobile-first y de tipo Server Side Rendering (SSR)
 
-![Descripción de la imagen](/images/picture.jpg)
+![Captura de pantalla 2024-04-18 182929](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/447a5c97-f624-4896-ac69-c040bc0a5ce8)
+![Captura de pantalla 2024-04-18 182956](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/2aaf29c7-946e-4c76-837e-65470b03eec6)
+
+![Captura de pantalla 2024-04-19 102059](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/69760fdb-4e63-42a9-bf21-f5ed54b76d12)
+![Captura de pantalla 2024-04-11 183215](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/3221a2c2-1e5b-49fb-acc0-1f0b6aa36051)
 
 
 ## Endpoints
@@ -105,4 +109,5 @@ No asociado a ningún endpoint concreto, estará presente una vez dentro de la a
 - [GET] `/dashboard`: Vista para dar de alta nuevos anuncios
 
 
+![Deploy](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/e4de0b38-64c2-42ae-a20d-d06968279e17)
 
