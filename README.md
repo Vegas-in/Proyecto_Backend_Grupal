@@ -2,6 +2,9 @@
 ## _Proyecto de Aplicación Web de Búsqueda de Trabajos Freelance_
 
 Este proyecto consiste en el desarrollo de una aplicación web en el que utilizarán conceptos de API-REST y MVC desde Backend.
+![mvc1](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/6cf794ff-58fa-4505-acb2-797122831d34)
+![1_gyUa6Qx-xcOR1vHg1IoVkw](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/600c52a6-f0c7-4df7-8ff8-879f940a7d95)
+
 
 Autores:
 
@@ -28,6 +31,9 @@ Autores:
 - Despliegue de la App en Render.
 - ✨Magia✨
 
+![Captura de pantalla 2024-04-18 182929](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/447a5c97-f624-4896-ac69-c040bc0a5ce8)
+![Captura de pantalla 2024-04-18 182956](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/2aaf29c7-946e-4c76-837e-65470b03eec6)
+
 Puedes ver la aplicación en funcionamiento aquí:
 https://proyecto-backend-grupal.onrender.com/
 
@@ -48,8 +54,7 @@ Requisitos:
  - Aplicación de técnicas de web scraping..
  - Desarrollo de una aplicación mobile-first y de tipo Server Side Rendering (SSR)
 
-![Captura de pantalla 2024-04-18 182929](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/447a5c97-f624-4896-ac69-c040bc0a5ce8)
-![Captura de pantalla 2024-04-18 182956](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/2aaf29c7-946e-4c76-837e-65470b03eec6)
+
 ![Captura de pantalla 2024-04-19 102059](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/69760fdb-4e63-42a9-bf21-f5ed54b76d12)
 ![Captura de pantalla 2024-04-11 183215](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/3221a2c2-1e5b-49fb-acc0-1f0b6aa36051)
 ![image (1)](https://github.com/Vegas-in/Proyecto_Backend_Grupal/assets/59848697/5d395293-e766-4c97-a6a9-6f5ab91509ab)
