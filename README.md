@@ -1,12 +1,54 @@
-# Proyecto_Backend_Grupal
+# FreeLance Jobs Finder
+## _Proyecto de Aplicación Web de Búsqueda de Trabajos Freelance_
 
-# Proyecto de Aplicación Web de Búsqueda de Ayudas, Subvenciones y Becas
+Este proyecto consiste en el desarrollo de una aplicación web en el que utilizarán conceptos de API-REST y MVC desde Backend.
 
-Este proyecto consiste en el desarrollo de una aplicación web para buscar ayudas, subvenciones, becas y premios que puedan utilizar empresas. Se utilizarán conceptos de Frontend y Backend.
+Autores:
 
-## Roles de Usuario
+- Adrián Terciado [@AdrianTerciado](https://github.com/AdrianTerciado)
+- Ángel Vegas [@Vegas-in](https://github.com/Vegas-in)
+- Rafa Lasso [@RLVM13 ](https://github.com/RLVM13)
+- Verónica Parra [@VeroPG](https://github.com/VeroPG)
 
-La aplicación contará con dos roles distintos: Usuario y Administrador. Las funcionalidades variarán dependiendo del tipo de usuario.
+
+## Tecnologías:
+
+- HTML5 como plantillas.
+- PUG como motor para renderizar las vistas.
+- CSS3 con Media Queries para generar vistas responsive.
+- Node.js, Express.js
+- Oauth (Google) & Json Web Token(JWT).
+- NoSql: MongoDB, Mongoose y despliegue en Mongo Atlas.
+- Sql: despliegue en Elephant.
+- Puppeteer para Web Scraping.
+- Middlewares Dev: Morgan y manage404 para seguimiento de logs y gestión de errores.
+- Postman para probar rutas y conexiones.
+- Trello con metodología Agile Scrum.
+- Git y Github.
+- Despliegue de la App en Render.
+- ✨Magia✨
+
+Puedes ver la aplicación en funcionamiento aquí:
+https://proyecto-backend-grupal.onrender.com/
+
+Para ver el proyecto en tu IDE, clona y en terminal escribe 
+```sh
+npm ci
+```
+
+## Especificaciones
+
+Este proyecto consiste en el desarrollo de una aplicación web de búsqueda y gestión de ofertas de trabajo freelance. 
+Requisitos:
+
+ - Distintos tipos de usuario: usuario normal, usuario registrado y administrador.
+ - Almacenamiento de los datos de los usuarios y favoritos en una base de datos relacional (SQL).
+- Almacenamiento de los datos de las ofertas en una basde de datos no-relacional (MongoDB)
+ - Aplicación de técnicas de web scraping..
+ - Desarrollo de una aplicación mobile-first y de tipo Server Side Rendering (SSR)
+
+![Descripción de la imagen](/images/picture.jpg)
+
 
 ## Endpoints
 
@@ -39,6 +81,7 @@ La aplicación contará con dos roles distintos: Usuario y Administrador. Las fu
 ### Menú:
 
 No asociado a ningún endpoint concreto, estará presente una vez dentro de la app, pasada la identificación, en todas las vistas excepto el Panel de control.
+  *Pendiente de implementar.
 
 ### Endpoints para usuario no logueado:
 
@@ -61,28 +104,5 @@ No asociado a ningún endpoint concreto, estará presente una vez dentro de la a
 - [GET] `/users`: Vista de listado de usuarios dados de alta en el sistema
 - [GET] `/dashboard`: Vista para dar de alta nuevos anuncios
 
-## Implementación y Tecnologías
-
-La aplicación se desarrollará utilizando una arquitectura de Server Side Rendering con un motor de plantillas Pug. Se utilizará gestión de control de versiones con Git y GitHub desde el principio del proyecto. Se seguirá una metodología ágil tipo SCRUM, aplicando TDD desde el comienzo hasta el final.
-
-## Modelo de Datos
-
-- Usuarios: Almacenamiento en base de datos relacional SQL.
-- Búsqueda de ayudas, subvenciones, becas y premios: Scraping de al menos dos webs distintas y BD MongoDB.
-- Anuncios: Almacenamiento en base de datos NoSQL con MongoDB.
-
-## Recursos de Terceros
-
-Se permite el uso de cualquier recurso de terceros (librerías, paquetes npm, etc.) además del código propio.
-
-## Control de Acceso
-
-La aplicación estará protegida contra entradas indebidas de usuarios no registrados. Se utilizará JWT para la autenticación y OAuth para el login con proveedores externos.
-
-## Notas adicionales
-
-- La aplicación debe ser mobile-first.
-- Se seguirá una metodología ágil tipo SCRUM.
-- Se realizarán tests unitarios desde el principio y, a ser posible, tests e2e al final.
 
 
