@@ -200,8 +200,13 @@ label {
     font-family: hind;
 } 
 
-.cards-search{
+.cards{
     display: flex;
+    padding:3%
+}
+
+.card{
+    padding:3% 5%
 }
 
 .card h2{
@@ -211,7 +216,7 @@ label {
 .card h4 {
     text-align: left;
     padding: 0;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .card p{
@@ -219,7 +224,7 @@ label {
 }
 
 .add-fav {
-    display: inline-block;
+    display: flex;
     padding: 5px;
     cursor: pointer;
     position: relative;
@@ -228,7 +233,7 @@ label {
 }
 
 .fa-solid {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: #7a7a7a;
     position: relative;
     }
@@ -242,6 +247,7 @@ label {
     }        
         
 input[type="checkbox"] { 
+    font-size: 1.75rem;
     position: absolute;
     opacity: 0;
     }
