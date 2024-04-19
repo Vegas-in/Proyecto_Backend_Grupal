@@ -189,7 +189,7 @@ const createOfferScrap = async (req, res) => {
        
     });
 
-    res.status(201).json("Base de datos actualizada");
+    res.status(201).render("../views/indexLogin.pug");
 
 }
 
